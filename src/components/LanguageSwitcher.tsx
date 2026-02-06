@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { languages } from "../i18n";
+import { languages, type LanguageCode } from "../i18n";
 
 interface Props {
-  lang: string;
-  setLang: (lang: string) => void;
+  lang: LanguageCode;
+  setLang: (lang: LanguageCode) => void;
 }
 
 export default function LanguageSwitcher({ lang, setLang }: Props) {

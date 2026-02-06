@@ -5,7 +5,9 @@ export const languages = [
   { code: "fr", label: "Français" },
 ];
 
-export const defaultLang = "en";
+export type LanguageCode = (typeof languages)[number]["code"];
+
+export const defaultLang: LanguageCode = "en";
 
 export const translations = {
   en: {

@@ -2,11 +2,12 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import type { LanguageCode } from "../i18n";
 
 interface Props {
-  lang: string;
+  lang: LanguageCode;
   t: any;
-  onLangChange?: (lang: string) => void;
+  onLangChange?: (lang: LanguageCode) => void;
 }
 
 const menuIds = [

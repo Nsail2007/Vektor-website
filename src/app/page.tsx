@@ -10,10 +10,10 @@ import DownloadSection from "../components/DownloadSection";
 import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
 import LanguageSwitcher from "../components/LanguageSwitcher";
-import { defaultLang, translations } from "../i18n";
+import { defaultLang, translations, type LanguageCode } from "../i18n";
 
 export default function Home() {
-  const [lang, setLang] = useState(defaultLang);
+  const [lang, setLang] = useState<LanguageCode>(defaultLang);
   const t = translations[lang];
 
   useEffect(() => {
