@@ -1,14 +1,3 @@
-export const languages = [
-  { code: "en", label: "English" },
-  { code: "ru", label: "Русский" },
-  { code: "es", label: "Español" },
-  { code: "fr", label: "Français" },
-];
-
-export type LanguageCode = (typeof languages)[number]["code"];
-
-export const defaultLang: LanguageCode = "en";
-
 export const translations = {
   en: {
     heroTitleMain: "Control Your PC",
@@ -388,4 +377,15 @@ export const translations = {
     footerPrivacy: "Privacidad",
     // ...добавить остальные тексты
   },
-};
+} as const;
+
+export type LanguageCode = keyof typeof translations;
+
+export const languages: { code: LanguageCode; label: string }[] = [
+  { code: "en", label: "English" },
+  { code: "ru", label: "Русский" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+];
+
+export const defaultLang: LanguageCode = "en";
