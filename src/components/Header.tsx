@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import type { LanguageCode } from "../i18n";
+import { languages, type LanguageCode } from "../i18n";
 
 interface Props {
   lang: LanguageCode;
@@ -16,13 +16,6 @@ const menuIds = [
   { key: "plans", href: "#plans" },
   { key: "download", href: "#download" },
   { key: "faq", href: "#faq" },
-];
-
-const LANGS = [
-  { code: "en", label: "English" },
-  { code: "ru", label: "Русский" },
-  { code: "fr", label: "Français" },
-  { code: "es", label: "Español" },
 ];
 
 export default function Header({ t, lang = "en", onLangChange }: Props) {
@@ -117,7 +110,7 @@ export default function Header({ t, lang = "en", onLangChange }: Props) {
                 aria-expanded={open}
               >
                 <span className="mr-1">
-                  {LANGS.find((l) => l.code === lang)?.label || lang.toUpperCase()}
+                  {languages.find((l) => l.code === lang)?.label || lang.toUpperCase()}
                 </span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
               </button>
@@ -127,7 +120,7 @@ export default function Header({ t, lang = "en", onLangChange }: Props) {
                   className="absolute right-0 top-full mt-2 w-36 rounded-xl bg-black/90 border border-white/10 shadow-xl z-50 py-1 animate-fadeIn"
                   style={{ minWidth: 120 }}
                 >
-                  {LANGS.map((l) => (
+                  {languages.map((l) => (
                     <button
                       key={l.code}
                       className={`w-full text-left px-4 py-2 text-sm text-white/90 hover:bg-[#5865F2]/80 hover:text-white transition rounded-lg ${l.code === lang ? "bg-[#5865F2]/60 text-white font-bold" : ""}`}
