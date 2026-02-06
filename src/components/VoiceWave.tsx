@@ -33,7 +33,7 @@ export default function VoiceWave({ className = "" }: Props) {
     let phase = fixedTime;
 
     const draw = () => {
-      const speed = 0.035;
+      const speed = 0.018;
       const ampBoost = 1;
       phase += speed;
       const time = phase;
