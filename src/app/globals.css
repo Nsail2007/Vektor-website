@@ -1,0 +1,160 @@
+.feature-glow {
+  position: relative;
+  z-index: 0;
+  transition: transform 0.3s ease;
+  isolation: isolate;
+}
+.feature-inner-shadow {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), inset 0 1px 8px rgba(0,0,0,0.12);
+}
+@import "tailwindcss";
+@import "./animations.css";
+
+html, body { height: 100%; }
+html { background: #0A0C16; }
+
+body{
+  margin: 0;
+  background: #0A0C16;
+  color: #171f2e;
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: 0.01em;
+  font-size: 16px;
+}
+
+/* Hide Next.js devtools overlay in dev */
+[data-nextjs-devtools],
+[data-nextjs-devtools-popover],
+[data-nextjs-devtools-button],
+[data-nextjs-toast] {
+  display: none !important;
+}
+
+/* Glow effect for feature blocks on hover */
+.feature-glow {
+  position: relative;
+  z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* glow удалён по запросу пользователя */
+
+/* Glow behind block on hover */
+
+
+
+
+
+
+.feature-glow::after {
+  content: "";
+  position: absolute;
+  inset: -68px;
+  border-radius: 3.1rem;
+  z-index: -2;
+  background:
+    radial-gradient(320px 220px at 50% 60%, rgba(158, 17, 130, 0.28), transparent 80%),
+    radial-gradient(420px 300px at 50% 55%, rgba(158, 17, 130, 0.16), transparent 85%);
+  filter: blur(30px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.98);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.feature-glow:hover::after {
+  opacity: 0.65;
+  transform: translateY(0) scale(1);
+}
+@keyframes pinkPulse {
+  0%, 100% { opacity: 0.45; transform: translate3d(0,0,0) scale(1); }
+  50%      { opacity: 0.75; transform: translate3d(0,0,0) scale(1.06); }
+}
+
+@keyframes glowEnter {
+  from { opacity: 0.18; }
+  to { opacity: 1; }
+}
+
+@keyframes waveFadeIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wave-fade-in {
+  opacity: 0;
+  animation: waveFadeIn 3s ease-in-out 0.6s forwards;
+}
+
+/* --- Modern Card Block Design --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card-block {
+  background: linear-gradient(180deg, rgba(43,45,69,0.92) 0%, rgba(33,36,54,0.98) 100%);
+  border-radius: 1.1rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.06);
+  background-clip: padding-box;
+  position: relative;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s, background 0.2s;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-block:hover {
+  box-shadow: 0 14px 36px rgba(88,101,242,0.22), 0 8px 28px rgba(0,0,0,0.35);
+  transform: translateY(-4px);
+  border-color: rgba(88,101,242,0.35);
+  background: linear-gradient(180deg, rgba(47,50,76,0.96) 0%, rgba(35,38,58,1) 100%);
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6c63ff 0%, #48c6ef 100%);
+  border-radius: 50%;
+  margin: 0 auto 1.2rem auto;
+  box-shadow: 0 2px 12px 0 rgba(80,80,255,0.10);
+  color: #fff;
+  font-size: 2rem;
+}
+
+.card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  color: #bfc6e0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}

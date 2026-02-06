@@ -1,0 +1,26 @@
+/* Glow effect for feature blocks on hover */
+.feature-glow {
+  position: relative;
+  z-index: 0;
+}
+.feature-glow:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  z-index: -1;
+  box-shadow: 0 0 96px 0 #ff4fa2, 0 0 0 24px #ff4fa255;
+}
+
+/* Glow behind block on hover */
+.feature-glow:hover::after {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 1.5rem;
+  z-index: -2;
+  box-shadow: 0 0 120px 0 #ff4fa2cc, 0 0 0 32px #ff4fa233;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: box-shadow 0.3s, opacity 0.3s;
+}

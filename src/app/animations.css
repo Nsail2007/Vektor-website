@@ -1,0 +1,40 @@
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes flickerSoft {
+  0%, 100% { opacity: 0.75; }
+  6% { opacity: 0.35; }
+  8% { opacity: 0.9; }
+  14% { opacity: 0.45; }
+  16% { opacity: 0.95; }
+  28% { opacity: 0.55; }
+  32% { opacity: 0.88; }
+  48% { opacity: 0.5; }
+  52% { opacity: 0.92; }
+  70% { opacity: 0.4; }
+  74% { opacity: 0.85; }
+  88% { opacity: 0.55; }
+}
+.animate-fadein {
+  animation: fadein 1s cubic-bezier(.4,0,.2,1) both;
+}
+.animate-slideup {
+  animation: slideup 0.8s cubic-bezier(.4,0,.2,1) both;
+}
+.animate-flicker-slow {
+  animation: flickerSoft 10s linear infinite;
+}
+[class*="delay-"] {
+  animation-delay: var(--delay, 0ms);
+}
+.delay-50 { --delay: 50ms; }
+.delay-100 { --delay: 100ms; }
+.delay-200 { --delay: 200ms; }
+.delay-300 { --delay: 300ms; }
+.delay-400 { --delay: 400ms; }
+.delay-500 { --delay: 500ms; }
